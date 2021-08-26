@@ -1,9 +1,10 @@
-.wrapper{
-    height: 100%;
-    padding-top: 100px;
+.wrapper {
+  height: 100%;
+  padding-top: 90px;
+  padding-left: 150px;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
 }

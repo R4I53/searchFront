@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Posts.module.scss";
-import photo from "../../img/Daria2.jpg";
+import photo from "../../img/Daria.jpg";
 
 const Posts = () => {
   return (
