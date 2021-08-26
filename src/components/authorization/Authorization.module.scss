@@ -1,0 +1,43 @@
+.wrapper {
+  padding-top: 330px;
+  height: 100vh;
+}
+
+.form {
+  height: 270px;
+  width: 400px;
+  background-color: #fcfcfc;
+  opacity: 50%;
+  border-radius: 15px;
+  margin: 0 auto;
+
+  &__text {
+    font-weight: 550;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 22px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin: 52px auto;
+
+  }
+
+  &__input {
+    width: 218px;
+    height: 50px;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-weight: 600;
+  }
+
+  &__icon {
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+}

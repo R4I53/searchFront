@@ -1,0 +1,41 @@
+
+
+.block {
+  height: 3000px;
+  min-width: 1000px;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  padding-top: 20px;
+}
+.container {
+  padding-top: 3px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.block_photo {
+  height: 420px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+  max-width: 100%;
+
+  &__item {
+    position: relative;
+    height: auto;
+    top: 50%;
+    transform: translateY(-40%);
+    border-radius: 10px;
+  }
+}
+
+.title {
+  font-size: 38px;
+  margin-top: 18px;
+}
+
+.text {
+  margin-top: 8px;
+  font-size: 22px;
+  max-width: 100%;
+}
