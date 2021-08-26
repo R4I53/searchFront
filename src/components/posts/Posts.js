@@ -10,22 +10,20 @@ const Posts = () => {
           <div className={s.block_photo}>
             <img className={s.block_photo__item} src={photo} alt="фото" />
           </div>
-          <h2 className={s.title}>Дарья Бульба</h2>
+          <h2 className={s.title}>Lorem, ipsum.</h2>
           <div className={s.text}>
-            В 2016 году 6 августа в китайском городе Шанхай пропала 20-ти летняя
-            модель Дарья Бульба. Девушке постоянно приходили сообщения с
-            незнакомого номера. Насколько известно, ей пришло сообщение с
-            просьбой о встрече, в тот же вечер она решила согласиться на неё. В
-            последний раз ее видели на камерах наружного наблюдения, но так и не
-            получилось узнать куда она направилась, потому что дальше она
-            находилась в "слепой" зоне. Соседка по комнате сообщила, что Дарья
-            не вернулась. Полиция закрыло это дело так ничего и не узнав, а
-            модельное агенство просто забыло этот случай. Родственники и друзья
-            Даши долгие месяца пытались найти хоть какие нибудь новости, но всё
-            безуспешно. Позже поклонники стали замечать, что на страницу Дарьи
-            переодически кто то заходит, хотя как уверяют доступа к аккаунту
-            Даши не было ни у кого. Последний раз на ее странице вк была какая
-            либо активность 25 августа 2019 года в 16:45 с устройства IPhone.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            provident earum laboriosam ipsam quaerat laudantium soluta eos ad
+            labore voluptatibus non suscipit magnam quam reprehenderit veritatis
+            deserunt aliquid distinctio dicta, corporis ducimus. Nostrum, atque
+            nisi, ducimus similique illo animi accusamus repellendus ratione,
+            consequatur quasi nihil error eius laboriosam tenetur. Quam iusto
+            maiores vitae, rerum quo modi reiciendis dolore dicta quod. Veniam
+            non ipsam minus aperiam quis! Inventore aliquam cumque ullam,
+            impedit voluptates quam. Ea et iure ipsam, neque ullam itaque,
+            excepturi accusamus veritatis aperiam placeat harum velit dolores.
+            Et tempore culpa minima, ad expedita dolorum itaque corrupti
+            pariatur nisi aliquam.
           </div>
         </div>
       </div>
