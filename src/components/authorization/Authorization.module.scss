@@ -3,13 +3,22 @@
   height: 100vh;
 }
 
+.error {
+  width: 200px;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 auto;
+  color: red;
+}
+
 .form {
-  height: 270px;
+  height: 255px;
   width: 400px;
   background-color: #fcfcfc;
   opacity: 50%;
   border-radius: 15px;
   margin: 0 auto;
+  position: relative;
 
   &__text {
     font-weight: 550;
@@ -21,8 +30,8 @@
   &__container {
     display: flex;
     justify-content: center;
-    margin: 52px auto;
-
+    margin: 48px auto;
+    height: 35px;
   }
 
   &__input {

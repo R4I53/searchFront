@@ -1,14 +1,13 @@
 .aside {
   height: auto;
-  margin-right: 500px;
+  // margin-right: 500px;
+  margin-right: 5%;
 }
 
 .wrapper {
-  min-width: 320px;
+  min-width: 15%;
   position: fixed;
 }
-
-
 
 .button {
   display: block;
@@ -21,15 +20,14 @@
   cursor: pointer;
   padding-top: 4px;
   margin-bottom: 25px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .active {
   padding-bottom: 2px;
   transform: rotate(180deg);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
-
 
 .icon {
   height: 32px;
@@ -40,31 +38,32 @@
 
 .block {
   height: auto;
-  width: 320px;
+  width: 100%;
   border-radius: 15px;
   background-color: #e6e6e6;
-  padding-top: 25px;
-  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 22px;
 }
 
 .block_item {
   max-width: 250px;
-  margin: 0px 0px 30px 22px;
+  margin: 0px 0px 10px 22px;
 }
 
 .title {
   font-size: 20px;
-  padding-bottom: 5px;
 }
 
 .container_list {
-  padding-left: 15px;
+  margin-top: -8px;
+  padding-left: 22px;
 }
 
 .menu_list {
@@ -75,8 +74,8 @@
     font-weight: 450;
     cursor: pointer;
 
-    &:hover {
-      list-style: disc;
-    }
+    // &:hover {
+    //   list-style: disc;
+    // }
   }
 }

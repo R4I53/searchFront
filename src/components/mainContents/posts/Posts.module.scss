@@ -1,0 +1,49 @@
+.section {
+  max-height: 100%;
+}
+
+.block {
+  max-height: 100%;
+  max-width: 50%;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+.container {
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.block_photo {
+  height: 380px;
+  width: 600px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: red;
+
+  &__item {
+    display: block;
+    min-height: 100%;
+    margin: 0 auto;
+    // min-width: 100%;
+    // border-radius: 10px;
+    // position: relative;
+    // height: auto;
+    // top: 50%;
+    // transform: translateY(-40%);
+    // border-radius: 10px;
+  }
+}
+
+.title {
+  font-size: 29px;
+  margin-top: 18px;
+}
+
+.text {
+  margin-top: 8px;
+  font-size: 19px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}

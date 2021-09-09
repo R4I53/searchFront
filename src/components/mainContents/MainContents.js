@@ -1,7 +1,7 @@
 import React from "react";
-import Posts from "../posts/Posts";
-import Menu from "../menu/Menu";
-import s from "./MainContents.module.scss";
+import Posts from "./posts/Posts";
+import Menu from "./menu/Menu";
+import s from "./MainContents.module.scss";;
 
 const MainContants = () => {
   return (

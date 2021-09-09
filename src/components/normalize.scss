@@ -51,11 +51,11 @@ a:not([class]) {
 /* Make images easier to work with */
 img {
   max-width: 100%;
-  display: block;
+  // display: block; ---------------<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 
 /* Natural flow and rhythm in articles by default */
-article>*+* {
+article > * + * {
   margin-top: 1em;
 }
 
@@ -130,11 +130,11 @@ a:not([class]) {
 /* Make images easier to work with */
 img {
   max-width: 100%;
-  display: block;
+  //display: block; ---------------------<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 
 /* Natural flow and rhythm in articles by default */
-article>*+* {
+article > * + * {
   margin-top: 1em;
 }
 
@@ -157,6 +157,8 @@ select {
 }
 
 input:focus,
-select:focus,button:focus,textarea:focus {
+select:focus,
+button:focus,
+textarea:focus {
   outline: none;
 }
