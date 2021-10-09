@@ -41,6 +41,10 @@
     border-radius: 15px;
     padding-left: 15px;
     font-weight: 600;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__icon {

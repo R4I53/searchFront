@@ -12,9 +12,10 @@ const actions = {
   }),
   login: (password) => async (dispatch) => {
     try {
-      const { data } = await host.post("api/authorization", { password });
+      const { data } = await host.post("/api/authorization", { password });
       localStorage.setItem("token", data.token);
       dispatch(actions.setAuth(true));
+      return true;
     } catch (e) {
       console.log(e);
       dispatch(actions.setError(true));

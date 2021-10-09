@@ -1,0 +1,9 @@
+export const SET_TITLE_IMG = "SET_POST";
+export const SET_TITLE_IMG_PREVIEW = "SET_TITLE_IMG_PREVIEW";
+export const SET_TITLE = "SET_TITLE";
+export const SET_TEXT = "SET_TEXT";
+export const SET_IMAGES = "SET_IMAGES";
+export const SET_IMAGES_PREVIEW = "SET_IMAGES_PREVIEW";
+export const DELETE_IMAGES_PREVIEW = "DELETE_IMAGES_PREVIEW";
+export const SET_CATEGORY = "SET_CATEGORY";
+export const SET_STATUS = "SET_STATUS"

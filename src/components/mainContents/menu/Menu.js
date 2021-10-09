@@ -4,33 +4,28 @@ import icon from "../../../img/Arrow.svg";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../../redux/posts/actions";
 
-const Menu = () => {
+const Menu = ({ stateBlock, stateButton, changeState }) => {
   const dispatch = useDispatch();
-  const stableDispatch = React.useCallback(dispatch, []);
   const names = useSelector((state) => state.post.names);
   const post = useSelector((state) => state.post.post);
-  const [activeButton, setActiveButton] = React.useState(true);
-  const [activeBlock, setActiveBlock] = React.useState(true);
-
-  const changeActive = () => {
-    setActiveButton((prev) => !prev);
-    setActiveBlock((prev) => !prev);
-  };
 
   React.useEffect(() => {
-    stableDispatch(actions.getNamePosts());
-  }, [stableDispatch]);
+    if (window.innerWidth <= 1280) {
+      changeState();
+    }
+    dispatch(actions.getNamePosts());
+  }, [dispatch]);
 
   return (
     <aside className={s.aside}>
       <div className={s.wrapper}>
         <button
-          className={activeButton ? s.active + " " + s.button : s.button}
-          onClick={changeActive}
+          className={stateButton ? s.active + " " + s.button : s.button}
+          onClick={changeState}
         >
           <img src={icon} alt="bt" className={s.icon} />
         </button>
-        {activeBlock && (
+        {stateBlock && (
           <div className={s.block}>
             {names.length > 0 && (
               <div className={s.container}>
@@ -38,22 +33,22 @@ const Menu = () => {
                   <h3 className={s.title}>Важные:</h3>
                   <div className={s.container_list}>
                     <ul className={s.menu_list}>
-                      {names.map(({ id, title, category }) => {
-                        if (category === 1) {
+                      {names
+                        .filter(({ category }) => Number(category) === 1)
+                        .map(({ id, title }) => {
                           return (
                             <li
                               onClick={() => dispatch(actions.getPost(id))}
                               key={id}
                               className={s.menu_list__item}
                               style={{
-                                listStyle: id === post.id && "disc",
+                                listStyle: id === post?.id && "disc",
                               }}
                             >
                               {title}
                             </li>
                           );
-                        }
-                      })}
+                        })}
                     </ul>
                   </div>
                 </div>
@@ -62,24 +57,22 @@ const Menu = () => {
                   <h3 className={s.title}>Важные:</h3>
                   <div className={s.container_list}>
                     <ul className={s.menu_list}>
-                      <li className={s.menu_list__item}>Паритет</li>
-                      <li className={s.menu_list__item}>Дарья Бульба</li>
-                      <li className={s.menu_list__item}>
-                        Александра Пакарклис
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className={s.block_item}>
-                  <h3 className={s.title}>Важные:</h3>
-                  <div className={s.container_list}>
-                    <ul className={s.menu_list}>
-                      <li className={s.menu_list__item}>Паритет</li>
-                      <li className={s.menu_list__item}>Дарья Бульба</li>
-                      <li className={s.menu_list__item}>
-                        Александра Пакарклис
-                      </li>
+                      {names
+                        .filter(({ category }) => Number(category) === 2)
+                        .map(({ id, title }) => {
+                          return (
+                            <li
+                              onClick={() => dispatch(actions.getPost(id))}
+                              key={id}
+                              className={s.menu_list__item}
+                              style={{
+                                listStyle: id === post?.id && "disc",
+                              }}
+                            >
+                              {title}
+                            </li>
+                          );
+                        })}
                     </ul>
                   </div>
                 </div>

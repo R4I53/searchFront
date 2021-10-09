@@ -1,19 +1,38 @@
 .aside {
-  height: auto;
-  // margin-right: 500px;
-  margin-right: 5%;
+  height: 100%;
+
+  @media only screen and (max-width: 1280px) {
+    margin-right: 0%;
+    z-index: 10;
+  }
 }
 
 .wrapper {
-  min-width: 15%;
-  position: fixed;
+  min-width: 300px;
+
+  @media only screen and (max-width: 1280px) {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    z-index: 10;
+  }
+
+  @media only screen and (max-width: 1280px) and (min-width: 900px) {
+    max-width: 650px;
+    min-width: 0px;
+  }
+  @media only screen and (max-width: 900px) {
+    max-width: 350px;
+    min-width: 0px;
+  }
 }
 
 .button {
   display: block;
   height: 60px;
   width: 60px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 50%;
   margin: 0 auto;
   border: none;
@@ -37,10 +56,10 @@
 }
 
 .block {
-  height: auto;
   width: 100%;
-  border-radius: 15px;
-  background-color: #e6e6e6;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #fff;
   padding-top: 20px;
   padding-bottom: 10px;
 }
@@ -50,6 +69,13 @@
   flex-direction: column;
   justify-content: center;
   padding-right: 22px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1280px) and (min-width: 900px) {
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 40px;
+  }
 }
 
 .block_item {
@@ -59,20 +85,26 @@
 
 .title {
   font-size: 20px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
 }
 
 .container_list {
   margin-top: -8px;
-  padding-left: 22px;
 }
 
 .menu_list {
   list-style: none;
 
   &__item {
+    width: 200px;
+    word-break: break-all;
     font-size: 17px;
     font-weight: 450;
     cursor: pointer;
+    padding-top: 6px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
 
     // &:hover {
     //   list-style: disc;
