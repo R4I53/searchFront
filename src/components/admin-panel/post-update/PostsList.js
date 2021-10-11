@@ -20,7 +20,7 @@ function PostList() {
       return n.push(name);
     });
     return setNewNames(n);
-  }, [names, dispatch, newNames]);
+  }, [names, dispatch]);
 
   const columns = [
     {

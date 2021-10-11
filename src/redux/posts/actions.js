@@ -22,10 +22,8 @@ const actions = {
   },
   getPost: (id) => async (dispatch) => {
     try {
-      console.log(id)
       const { data } = await authHost.get(`/api/post/${id}`);
       localStorage.setItem("postId", id);
-      console.log("fd");
       return dispatch(actions.setPost(data));
     } catch (e) {
       console.log(e);

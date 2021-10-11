@@ -8,6 +8,8 @@ import actions from "../../../redux/admin/actions";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import Scroll from "react-scroll";
 
+const scroll = Scroll.animateScroll;
+
 const PostItem = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -17,7 +19,7 @@ const PostItem = () => {
   );
   React.useEffect(() => {
     dispatch(actions.getPost(id));
-    dispatch(actions.setStatus(null));
+    return dispatch(actions.setStatus(null));
   }, [dispatch, id]);
 
   const onDeletePost = (id) => {
@@ -29,7 +31,6 @@ const PostItem = () => {
     }
   };
 
-  const scroll = Scroll.animateScroll;
 
   const scrollOnStatus = () =>
     scroll.scrollToTop({
@@ -79,7 +80,7 @@ const PostItem = () => {
             backgroundColor: "rgba(43, 255, 0, 0.12)",
           }}
           message="Отправлено!"
-          description="Ваш пост был отправлен на сервер"
+          description="Изменение применено"
           type="success"
           closable
           showIcon
