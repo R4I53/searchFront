@@ -15,6 +15,8 @@ function App() {
     dispatch(actions.check()).finally(() => setLoading(false));
   }, [dispatch]); //каждый раз при обновлении страницы
 
+  React.useEffect(() => console.log(process.env.REACT_APP_API_URL));
+
   if (loading) {
     return null;
   }

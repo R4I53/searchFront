@@ -32,11 +32,11 @@ const Posts = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href={"http://localhost:49/" + titleImg}
+              href={`${process.env.REACT_APP_API_URL}/${titleImg}`}
             >
               <img
                 className={titleImg && s.block_photo__item}
-                src={"http://localhost:49/" + titleImg}
+                src={`${process.env.REACT_APP_API_URL}/${titleImg}`}
                 alt="title img"
               />
             </a>

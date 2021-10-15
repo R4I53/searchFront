@@ -54,7 +54,7 @@ const Menu = ({ stateBlock, stateButton, changeState }) => {
                 </div>
 
                 <div className={s.block_item}>
-                  <h3 className={s.title}>Важные:</h3>
+                  <h3 className={s.title}>Второстепенные:</h3>
                   <div className={s.container_list}>
                     <ul className={s.menu_list}>
                       {names

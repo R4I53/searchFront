@@ -31,7 +31,7 @@ const AppRouter = () => {
                 <Content>
                   <Switch>
                     <PrivateRoute
-                      path={`/admin-994545/`}
+                      path={`/admin-994545`}
                       component={PostCreate}
                       exact
                     />

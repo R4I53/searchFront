@@ -19,6 +19,12 @@ const Authorization = () => {
     }
   };
 
+  const onKeyDownAuth = (e, password) => {
+    if (e.keyCode === 13) {
+      return auth(password);
+    }
+  };
+
   return (
     <div className={s.wrapper}>
       <div className={s.form}>
@@ -29,6 +35,7 @@ const Authorization = () => {
             onChange={(e) => setPassword(e.target.value)}
             type="text"
             className={s.form__input}
+            onKeyDown={(e) => onKeyDownAuth(e, password)}
           />
           <img
             onClick={() => auth(password)}
