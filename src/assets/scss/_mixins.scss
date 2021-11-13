@@ -1,0 +1,66 @@
+@import "./_colors";
+
+@mixin transition-mix(
+  $property: all,
+  $duration: 0.2s,
+  $timing: linear,
+  $delay: 0s
+) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+}
+
+@mixin position-absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin img-position($max-width: 200%, $max-height: 200%) {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    @include position-absolute($top: 50%, $left: 50%);
+
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: $max-width;
+    max-height: $max-height;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin responsive(
+  $default-br-color: $default-border,
+  $active-br-color: $active-border,
+  $w: 100%,
+  $h: 45px,
+  $bg: inherit,
+  $br: 10px,
+  $color: $text,
+  $padding: 0 10px,
+  $fs: 16px
+) {
+  width: $w;
+  height: $h;
+  background-color: $bg;
+  border-radius: $br;
+  border: 3px solid $default-br-color;
+  outline: none;
+  color: $color;
+  padding: $padding;
+  font-size: $fs;
+
+  &:focus,
+  &:hover {
+    border: 3px solid $active-br-color;
+    box-shadow: 0px 0px 10px $active-br-color;
+  }
+}

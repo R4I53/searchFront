@@ -3,24 +3,24 @@ body {
 }
 
 .background {
-  background-image: url("../img/Bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
+ // background-image: url("../assets/img/Bg.jpg");
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  // background-attachment: fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+  // width: 100%;
+  // min-height: 100vh;
 
-  @media only screen and (max-width: 1280px) {
-    background-position: center;
-  }
+  // @media only screen and (max-width: 1280px) {
+  //   background-position: center;
+  // }
 
-  @media (max-width: 768px) {
-    height: 100%;
-  }
+  // @media (max-width: 768px) {
+  //   height: 100%;
+  // }
 }
 
 .admin {

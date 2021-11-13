@@ -1,0 +1,31 @@
+@import "../../../assets/scss/_media";
+
+.posts {
+  padding: 50px 0px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobile-width--sm) {
+    display: block;
+   
+  }
+}
+
+// & > p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// ul,
+// ol,
+// li,
+// strong,
+// em,
+// u {
+//   max-width: 100%;
+// }

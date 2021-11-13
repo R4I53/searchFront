@@ -1,0 +1,70 @@
+@import "../../../../assets/scss/_colors";
+@import "../../../../assets/scss/_mixins";
+@import "../../../../assets/scss/_media";
+
+.block {
+  max-width: 100%;
+  max-height: 280px;
+  background-color: $block-bg;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block_img {
+  width: 500px;
+  height: 100%;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 25px 20px 25px;
+
+  @media (max-width: $tablet-width--sm) {
+    padding: 10px 10px;
+  }
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  color: $text;
+
+  @media (max-width: $tablet-width--sm) {
+    font-size: 20px;
+  }
+}
+
+.wrapper {
+  max-height: 100%;
+}
+
+.text {
+  max-width: 450px;
+  margin-top: 10px;
+  height: 100%;
+  font-size: 18px;
+  color: $text;
+
+  @media (max-width: $tablet-width--sm) {
+    font-size: 14px;
+  }
+}
+
+.icon {
+  @include position-absolute(_, 30px, 10px);
+}

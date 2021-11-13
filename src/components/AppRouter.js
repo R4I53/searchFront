@@ -2,13 +2,14 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Result, Button, Layout } from "antd";
 
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "../utils/PrivateRoute";
 import AdminMenu from "./admin-panel/menu/AdminMenu";
 import PostCreate from "./admin-panel/post-create/PostCreate.jsx";
 import PostsList from "./admin-panel/post-update/PostsList";
 import PostItem from "./admin-panel/post-update/PostItem";
-import MainContents from "./mainContents/MainContents";
-import Authorization from "./authorization/Authorization";
+import MainContents from "./main-contents/MainContents";
+import Auth from "../pages/Auth";
+import Main from "../pages/Main";
 
 import s from "./App.module.scss";
 
@@ -18,9 +19,9 @@ const AppRouter = () => {
   return (
     <>
       <Switch>
-        <Route path="/auth" component={Authorization} />
-        <PrivateRoute exact path="/" component={MainContents} />
-        <Route
+        <Route path="/auth" component={Auth} />
+        <PrivateRoute exact path="/" component={Main} />
+        {/* <Route
           path="/admin-994545"
           render={({ match: { url } }) => (
             <Layout>
@@ -49,8 +50,8 @@ const AppRouter = () => {
               </Layout>
             </Layout>
           )}
-        />
-        <Route
+        /> */}
+        {/* <Route
           render={() => (
             <div style={{ minHeight: "100vh", backgroundColor: "white" }}>
               <Result
@@ -65,7 +66,7 @@ const AppRouter = () => {
               />
             </div>
           )}
-        />
+        /> */}
       </Switch>
     </>
   );

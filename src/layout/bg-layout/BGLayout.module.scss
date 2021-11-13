@@ -1,0 +1,16 @@
+@import "../../assets/scss/_colors";
+@import "../../assets/scss/_mixins";
+
+.bg {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background-color: #0d1117;
+}
+
+.container {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  padding: 25px 0px;
+}

@@ -2,20 +2,20 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
- const PrivateRoute = ({ component: Component, ...rest }) =>  {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const isAuth = useSelector((state) => state.auth.isAuth);
 
   return (
     <Route
       {...rest}
       render={(props) =>
-        isAuth ? <Component {...props} /> : <Redirect to="/auth" />
+        true ? <Component {...props} /> : <Redirect to="/auth" />
       }
     />
   );
-}
+};
 
-export default PrivateRoute
+export default PrivateRoute;
 
 // <div style={{ minHeight: "100vh", backgroundColor: "white" }}>
 //             <Result
