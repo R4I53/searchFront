@@ -1,13 +1,19 @@
 import React from "react";
 import { render } from "react-dom";
-import App from "./components/App";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import store from "./redux/store";
+import App from "./components/app/App";
+import reportWebVitals from "./reportWebVitals";
+
+import "./assets/scss/_variable.scss";
 
 render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

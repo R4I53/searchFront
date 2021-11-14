@@ -1,0 +1,65 @@
+@import "../../assets/scss/_colors";
+@import "../../assets/scss/_mixins";
+@import "../../assets/scss/_media";
+
+.aside {
+  @include position-absolute(130px, 20px, _, _);
+
+  z-index: 6;
+  width: 390px;
+  min-height: 500px;
+  height: auto;
+  background-color: $block-bg;
+  border-radius: 10px;
+  padding: 25px 20px;
+  border-left: 3px solid $default-border;
+  border-bottom: 3px solid $default-border;
+
+  transition: right ease 0.7s;
+
+  &:hover {
+    border-left: 3px solid $active-border;
+    border-bottom: 3px solid $active-border;
+  }
+
+  @media (max-width: $tablet-width--sm) {
+    width: 340px;
+  }
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+.category {
+  font-size: 22px;
+  color: $text;
+}
+
+.list {
+  display: block;
+  list-style: none;
+
+  &__item {
+    margin: 2px 0px 0px 30px;
+    font-size: 19px;
+    color: $text;
+    cursor: pointer;
+    transition: all ease 0.2s;
+
+    &:hover {
+      color: $text-active;
+      transition: all ease 0.2s;
+    }
+  }
+
+  &__item_active {
+    color: #00d63c;
+  }
+}
+
+.active {
+  display: block;
+  right: 10px;
+  transition: right ease 0.7s;
+}

@@ -1,31 +1,34 @@
 import React from "react";
+import { useHistory } from "react-router";
 import { Redirect, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import actions from "../redux/auth/actions";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const isAuth = useSelector((state) => state.auth.isAuth);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(async () => {
+    const status = await dispatch(actions.check());
+
+    if (status) {
+      setLoading(false);
+    } else {
+      await setLoading(false);
+      return history.push("/auth");
+    }
+  });
 
   return (
     <Route
       {...rest}
-      render={(props) =>
-        true ? <Component {...props} /> : <Redirect to="/auth" />
-      }
+      render={(props) => (loading ? null : <Component {...props} />)}
     />
   );
 };
 
 export default PrivateRoute;
 
-// <div style={{ minHeight: "100vh", backgroundColor: "white" }}>
-//             <Result
-//               status="403"
-//               title="403"
-//               subTitle="У вас нет доступа"
-//               extra={
-//                 <Button type="primary">
-//                   <Link to={"/auth"}>авторизироваться</Link>
-//                 </Button>
-//               }
-//             />
-//           </div>

@@ -1,6 +1,6 @@
-@import "../../../../assets/scss/_colors";
-@import "../../../../assets/scss/_mixins";
-@import "../../../../assets/scss/_media";
+@import "../../../assets/scss/_colors";
+@import "../../../assets/scss/_mixins";
+@import "../../../assets/scss/_media";
 
 .block {
   max-width: 100%;
@@ -10,6 +10,11 @@
   overflow: hidden;
   position: relative;
   margin: 0 15px;
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: 0px 0px 14px 0.2px $active-shadow;
+  }
 }
 
 .container {
@@ -32,7 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px 25px 20px 25px;
+  padding: 15px 25px 20px 25px;
 
   @media (max-width: $tablet-width--sm) {
     padding: 10px 10px;
@@ -66,5 +71,6 @@
 }
 
 .icon {
-  @include position-absolute(_, 30px, 10px);
+  @include position-absolute(_, 40px, 18px);
+  width: 55px;
 }

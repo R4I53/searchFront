@@ -1,36 +1,47 @@
 @import "../../assets/scss/_colors";
 @import "../../assets/scss/_mixins";
+@import "../../assets/scss/_media";
 
 .block {
-  @include position-absolute(40%, _, _, 50%);
+  @include position-absolute(45%, _, _, 50%);
   transform: translate(-50%, -50%);
-  width: 420px;
-  height: 285px;
+  width: 350px;
+  height: 260px;
   padding: 15px;
   background: $block-bg;
   border-radius: 10px;
+
+  @media (max-width: $mobile-width--sm) {
+    width: 300px;
+    height: 240px;
+  }
 }
 
 .container {
-  width: 240px;
+  width: 210px;
   height: 84%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .text {
-  font-size: 30px;
+  font-size: 28px;
   line-height: 35px;
   color: $text;
   width: 100%;
   text-align: center;
+
+  @media (max-width: $mobile-width) {
+    font-size: 28px;
+  }
 }
 
 .input {
   @include responsive();
-  margin-bottom: 8px;
+  margin-top: 60px;
+
+  @media (max-width: $mobile-width--sm) {
+    margin-top: 45px;
+  }
 }
 
 .input_error {
@@ -40,6 +51,11 @@
 
 .button {
   @include responsive();
+  margin-top: 35px;
+
+  @media (max-width: $mobile-width--sm) {
+    margin-top: 30px;
+  }
 }
 
 .icon {

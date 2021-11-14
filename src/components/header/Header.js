@@ -1,54 +1,80 @@
 import React from "react";
-import { useHistory } from "react-router";
-import { useActiveIcon } from "../../hooks/useActiveIcon";
+import { Link } from "react-router-dom";
 
-import teamIcon from "../../assets/img/team.jpg";
+import ContainerLayout from "../../layout/container-layout/ContainerLayout";
 
 import s from "./Header.module.scss";
 
-const Header = () => {
-  const history = useHistory();
-  const { icon, onMouseOver, onMouseOut } = useActiveIcon(
-    false,
-    "burger__line--not-active",
-    "burger__line--active"
-  );
+import teamIcon from "../../assets/img/team.jpg";
 
-  console.log(history);
-
+const Header = ({
+  icon,
+  onMouseOver,
+  onMouseOut,
+  isActiveMenu,
+  changeIsActiveMenu,
+  changeCategory,
+  links,
+  category,
+}) => {
   return (
-    <>
-      {history.location.pathname !== "/auth" && (
-        <header className={s.header}>
-          
-          <div className={s.container}>
-            <div className={s.block_icon}>
+    <ContainerLayout>
+      <header className={s.header}>
+        <div className={s.container}>
+          <div className={s.block_icon}>
+            <a href="https://pbs.twimg.com/media/D_l1c2qXsAAykgI.jpg">
               <img src={teamIcon} alt="team" className={s.icon} />
-            </div>
-            <nav className={s.nav}>
-              <ul className={s.list}>
-                <li className={s.list__item}>ВСЕ</li>
-                <li className={s.list__item}>ВАЖНЫЕ</li>
-                <li className={s.list__item}>ВТОРОСТЕПЕННЫЕ </li>
-              </ul>
-            </nav>
-            <div
-              className={s.burger}
-              onMouseOut={onMouseOut}
-              onMouseOver={onMouseOver}
-            >
-              <div className={s.burger__line + " " + s[icon]}></div>
-              <div className={s.burger__line + " " + s[icon]}></div>
-              <div className={s.burger__line + " " + s[icon]}></div>
-            </div>
+            </a>
           </div>
-        </header>
-      )}
-    </>
+          <nav className={s.nav}>
+            <ul className={s.list}>
+              {links.map((link, i) => (
+                <Link key={link} to="/" onClick={() => changeCategory(i)}>
+                  <div
+                    className={
+                      category == i
+                        ? s.list__block + " " + s.list__block_active
+                        : s.list__block
+                    }
+                  >
+                    <li className={s.list__item}>{link}</li>
+                  </div>
+                </Link>
+              ))}
+            </ul>
+          </nav>
+          <div
+            className={s.burger}
+            onMouseOut={onMouseOut}
+            onMouseOver={onMouseOver}
+            onClick={() => changeIsActiveMenu(!isActiveMenu)}
+          >
+            <div
+              className={
+                s.burger__line +
+                " " +
+                (isActiveMenu ? s["burger__line--active"] : s[icon])
+              }
+            ></div>
+            <div
+              className={
+                s.burger__line +
+                " " +
+                (isActiveMenu ? s["burger__line--active"] : s[icon])
+              }
+            ></div>
+            <div
+              className={
+                s.burger__line +
+                " " +
+                (isActiveMenu ? s["burger__line--active"] : s[icon])
+              }
+            ></div>
+          </div>
+        </div>
+      </header>
+    </ContainerLayout>
   );
 };
 
 export default Header;
-
-
-

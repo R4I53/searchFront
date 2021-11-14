@@ -1,17 +1,19 @@
 import React from "react";
 
-import Header from "../components/header/Header";
+import Posts from "../components/posts/PostsContainer";
+import Header from "../components/header/HeaderContainer";
+import Menu from "../components/menu/MenuContainer";
 import ContainerLayout from "../layout/container-layout/ContainerLayout";
-import Posts from "../components/main-contents/posts/Posts";
 
 const Main = () => {
   return (
-    <div>
+    <>
+      <Header />
+      <Menu />
       <ContainerLayout>
-        <Header />
         <Posts />
       </ContainerLayout>
-    </div>
+    </>
   );
 };
 

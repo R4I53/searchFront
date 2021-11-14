@@ -32,6 +32,7 @@
 .icon {
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }
 
 .nav {
@@ -39,21 +40,43 @@
 
 .list {
   display: flex;
+  align-items: stretch;
+
+  &__block {
+    height: 50px;
+    padding: 0 15px;
+    // margin-right: 12px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $bg-active;
+      transition: all ease 0.2s;
+    }
+
+    @media (max-width: $mobile-width) {
+      padding: 0 8px;
+    }
+
+    &_active {
+      background-color: $bg-active;
+    }
+  }
 
   &__item {
+    line-height: 50px;
+    vertical-align: middle;
     color: $text;
     font-size: 15px;
     text-transform: uppercase;
     list-style: none;
-    margin-right: 25px;
 
-    @media(max-width: $mobile-width){
+    @media (max-width: $mobile-width) {
       font-size: 14px;
-      margin-right: 12px;
     }
 
-    @media(max-width: $mobile-width--sm){
-     display: none;
+    @media (max-width: $mobile-width--sm) {
+      display: none;
     }
   }
 }
@@ -64,6 +87,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 
   &__line {
     width: 35px;
@@ -73,7 +97,7 @@
 }
 
 .burger__line--active {
-  background-color: $active-icon;
+  background-color: #00d63def;
   box-shadow: 0px 0px 10px 0.2px $active-shadow;
 }
 

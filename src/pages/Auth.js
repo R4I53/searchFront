@@ -1,7 +1,8 @@
 import React from "react";
 
-import AuthForm from "../components/auth-form/AuthForm";
-import BGLayout from "../layout/bg-layout/BGLayout";
+import AuthForm from "../components/auth-form/AuthFormContainer";
+
+import s from "./Auth.module.scss"
 
 const Auth = () => {
   const vantaRef = React.useRef(null);
@@ -23,7 +24,7 @@ const Auth = () => {
           backgroundColor: 0x0d1117,
           points: 8.0,
           maxDistance: 18.0,
-          spacing: 14.0,
+          spacing: 17.0,
         })
       );
     }
@@ -34,9 +35,9 @@ const Auth = () => {
   }, [vantaEffect]);
 
   return (
-    <div style={{ height: "100vh" }} ref={vantaRef} className="">
+    <section ref={vantaRef} className={s.section}>
       <AuthForm />
-    </div>
+    </section>
   );
 };
 

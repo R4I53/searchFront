@@ -23,14 +23,17 @@ const actions = {
   },
 
   check: () => async (dispatch) => {
-    const token = localStorage.getItem("token");
-    if (token)
-      try {
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
         const { data } = await authHost.get("/api/authorization/check");
-        return dispatch(actions.setAuth(data.isAuth));
-      } catch (e) {
-        console.log(e);
+        dispatch(actions.setAuth(data.isAuth));
+        return true;
       }
+      return false;
+    } catch (e) {
+      console.log(e);
+    }
   },
 };
 

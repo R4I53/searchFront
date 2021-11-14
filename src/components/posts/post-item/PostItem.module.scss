@@ -1,16 +1,17 @@
-@import "../../../../assets/scss/_colors";
-@import "../../../../assets/scss/_mixins";
-@import "../../../../assets/scss/_media";
+@import "../../../assets/scss/_colors";
+@import "../../../assets/scss/_mixins";
+@import "../../../assets/scss/_media";
 
 .post {
   // calc((100% - 3 * 32px) / 3
   width: calc(100% / 3 - 32px);
-  height: 240px;
+  height: 220px;
   background-color: $block-bg;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  margin: 50px 15px 24px 15px;
+  margin: 32px 15px 0px 15px;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0px 0px 14px 0.2px $active-shadow;
@@ -29,7 +30,7 @@
     width: calc(100% / 2 - 32px);
   }
 
-   @media (max-width: $mobile-width--sm) {
+  @media (max-width: $mobile-width--sm) {
     margin: 20px auto;
     width: 230px;
   }
@@ -42,11 +43,11 @@
   position: relative;
 
   @media (max-width: $tablet-width) {
-    height: 120px;
+    height: 130px;
   }
 
   @media (max-width: $tablet-width--sm) {
-    height: 110px;
+    height: 118px;
   }
 }
 
@@ -75,7 +76,7 @@
 
   @media (max-width: $tablet-width) {
     font-size: 19px;
-    @include position-absolute(90px, _, _, 50%);
+    @include position-absolute(98px, _, _, 50%);
   }
 
   @media (max-width: $tablet-width--sm) {
@@ -88,21 +89,24 @@
     @include position-absolute(82px, _, _, 50%);
   }
 
- 
+  @media (max-width: $tablet-width--sm) {
+    @include position-absolute(88px, _, _, 50%);
+  }
 }
 
 .icon {
-  @include position-absolute(80%, _, _, 50%);
+  @include position-absolute(85%, _, _, 50%);
   transform: translate(-50%, -50%);
-  width: 25px;
+  width: 23px;
   margin: 0 auto;
 
   @media (max-width: $tablet-width) {
+    @include position-absolute(83%, _, _, 50%);
     width: 23px;
   }
 
   @media (max-width: $tablet-width--sm) {
-    width: 20px;
+    @include position-absolute(83%, _, _, 50%);
+    width: 18px;
   }
-
 }

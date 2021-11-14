@@ -1,34 +1,38 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
 import { Result, Button, Layout } from "antd";
+import { useTransition } from "react-spring";
+import { Switch, Route, Link, useLocation } from "react-router-dom";
 
 import PrivateRoute from "../utils/PrivateRoute";
-import AdminMenu from "./admin-panel/menu/AdminMenu";
-import PostCreate from "./admin-panel/post-create/PostCreate.jsx";
-import PostsList from "./admin-panel/post-update/PostsList";
-import PostItem from "./admin-panel/post-update/PostItem";
-import MainContents from "./main-contents/MainContents";
 import Auth from "../pages/Auth";
 import Main from "../pages/Main";
+import Header from "./header/Header";
+import Post from "../pages/Post";
+import Menu from "./menu/MenuContainer";
 
-import s from "./App.module.scss";
+import PostCreate from "./admin-panel/post-create/PostCreate";
+import PostsList from "./admin-panel/post-update/PostsList";
+import PostItem from "./admin-panel/post-update/PostItem";
+import AdminMenu from "./admin-panel/menu/AdminMenu";
 
 const { Sider, Content } = Layout;
 
-const AppRouter = () => {
+const Routes = () => {
   return (
     <>
       <Switch>
         <Route path="/auth" component={Auth} />
-        <PrivateRoute exact path="/" component={Main} />
-        {/* <Route
+        <PrivateRoute exact path="/" component={Main} exact />
+        <PrivateRoute exact path="/post/:id" component={Post} />
+
+        <Route
           path="/admin-994545"
           render={({ match: { url } }) => (
             <Layout>
               <Sider>
                 <AdminMenu />
               </Sider>
-              <Layout className={s.admin}>
+              <Layout>
                 <Content>
                   <Switch>
                     <PrivateRoute
@@ -50,26 +54,20 @@ const AppRouter = () => {
               </Layout>
             </Layout>
           )}
-        /> */}
-        {/* <Route
-          render={() => (
-            <div style={{ minHeight: "100vh", backgroundColor: "white" }}>
-              <Result
-                status="404"
-                title="404"
-                subTitle="Такой страницы нет"
-                extra={
-                  <Button type="primary">
-                    <Link to={"/"}>Назад</Link>
-                  </Button>
-                }
-              />
-            </div>
-          )}
-        /> */}
+        />
+        <Result
+          status="404"
+          title="404"
+          subTitle="Такой страницы нет"
+          extra={
+            <Button type="primary">
+              <Link to={"/"}>Назад</Link>
+            </Button>
+          }
+        />
       </Switch>
     </>
   );
 };
 
-export default AppRouter;
+export default Routes;

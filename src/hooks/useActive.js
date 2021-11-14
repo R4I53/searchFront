@@ -1,6 +1,6 @@
 import React from "react";
 
-export const useActiveIcon = (state, def, act) => {
+export const useActive = (state, def, act) => {
   const [active, setActive] = React.useState(state);
 
   const onMouseOver = () => {
